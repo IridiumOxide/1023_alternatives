@@ -1,0 +1,18 @@
+#lamps {
+  display: inline-block
+}
+.lamp_lit, .lamp_unlit, .lamp_reset {
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  float: left;
+}
+.button {
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  float: left;
+}
+.lamp_info {
+  text-align: center;
+}

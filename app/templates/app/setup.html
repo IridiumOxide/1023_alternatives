@@ -1,0 +1,26 @@
+{% load static %}
+<head>
+  <title>Eksperyment 1023 alternatyw</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static "style/style.css" %} ">
+</head>
+
+<body>
+  <div id="setup"></div>
+  <div id="lamps"></div>
+  <div id="buttons"></div>
+  <script type="text/javascript"> var STATIC_URL = "/static/"; </script>
+  <script type="text/javascript" src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/buttons.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/lamps.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/test.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/experiment.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/setup.js" %}"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      createSetup();
+    });
+  </script>
+</body>

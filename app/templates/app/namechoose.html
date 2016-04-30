@@ -1,0 +1,14 @@
+{% if users %}
+    Username:
+    <select id="nameselect" onchange=ctx()>
+        <option disabled selected></option>
+        {% for user in users %}
+            <option value="{{ user.username }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+    <a href="" id="choosetext">CHOOSE</a>
+    {% load static %}
+    <script type="text/javascript" src = "{% static "js/namechoose.js" %}"></script>
+{% else %}
+    No users in the system!
+{% endif %}

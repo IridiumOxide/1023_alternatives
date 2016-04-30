@@ -1,0 +1,21 @@
+{% load static %}
+<head>
+  <title>Eksperyment 1023 alternatyw</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static "style/style.css" %}?v=0002">
+</head>
+
+<body>
+  <div id="lamps"></div>
+  <script type="text/javascript"> var STATIC_URL = {% static "" %}; var INSTANCE_NAME = "{{ instance_name }}";</script>
+  <script type="text/javascript" src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/cookie_plugin/jquery.cookie.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/setup.js?v=0011" %}"></script>
+    {% csrf_token %}
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+        setup("{{ definition }}");
+    });
+  </script>
+</body>

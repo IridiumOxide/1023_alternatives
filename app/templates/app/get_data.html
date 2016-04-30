@@ -1,0 +1,22 @@
+{% if users %}
+    Choose user:
+    <select id="nameselect" onchange=ctx()>
+        <option disabled selected></option>
+        {% for user in users %}
+            <option value="{{ user.username }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+    <a href="" id="choosetext">CHOOSE</a>
+
+    <script type="text/javascript">
+        var nameselect = document.getElementById("nameselect");
+        var choosetext = document.getElementById("choosetext");
+
+        var ctx = function(){
+            choosetext.href = "/d/" + nameselect.value;
+        };
+    </script>
+
+{% else %}
+    No users in the system!
+{% endif %}

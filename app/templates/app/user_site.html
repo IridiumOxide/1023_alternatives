@@ -1,0 +1,57 @@
+{% if data_unset %}
+    <div id="plzgivedata">
+    Please share your data with us!
+    <label for="gender"> Gender: </label>
+    <select id="gender">
+        <option disabled selected></option>
+        <option value="M">MALE</option>
+        <option value="F">FEMALE</option>
+        <option value="B">BOTH</option>
+        <option value="N">NONE</option>
+        <option value="O">OTHER</option>
+        <option value="-">NOT DISCLOSED</option>
+    </select>
+    <label for="age"> Age: </label>
+    <input id="age" type="number"><br>
+    <button onclick=setpersonal()>SET PERSONAL DATA</button><br>
+    <button onclick=dontsetpersonal()>NO THANKS</button><br></div>
+{% endif %}
+
+COMPLETED:<br>
+{% if completed %}
+    <ul>
+    {% for exp in completed %}
+        <li>{{ exp.name }} : {{ exp.definition.name }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    NONE COMPLETED
+{% endif %}
+<br><br>
+IN PROGRESS:<br>
+{% if in_progress %}
+    <ul>
+    {% for exp in in_progress %}
+        <li><a href={% url 'experiment' exp.name %}>{{ exp.name }} : {{ exp.definition.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    NONE IN PROGRESS
+{% endif %}
+<br><br>
+NEW:<br>
+{% if new %}
+    <ul>
+    {% for exp in new %}
+        <li><a href={% url 'experiment' exp.name %}>{{ exp.name }} : {{ exp.definition.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    NONE NEW
+{% endif %}
+
+{% load static %}
+<script> var USERNAME = "{{ username }}"</script>
+<script type="text/javascript" src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/cookie_plugin/jquery.cookie.js" %}"></script>
+<script type="text/javascript" src = "{% static "js/setpersonal.js" %}"></script>
